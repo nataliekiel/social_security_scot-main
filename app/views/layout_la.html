@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/ssg6.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/la.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header {{ params.containerClasses | default('govuk-width-container') }}">
+  <div class="govuk-header__logo">
+    <span class="govuk-header__logotype">
+      <a href="/index.html" id="logo-ssg1"><image src="{{ asset_path }}images/ssg1.png" alt="ssg1 logo" width="280" height="100"></image></a>
+      </span>
+      <hr style="width:300%">
+  </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container">
+<p>  <u> Assessibility</u> &emsp; &emsp; <u>Contact us</u> &emsp; &emsp; <u>Privacy </u> &emsp; &emsp; <u>Social Security Corporate site</u> </p>
+
+<hr class="govuk-footer__section-break">
+
+<div class="govuk-footer__meta">
+  <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <p>mygov.scot is the place for people in Scotland to access
+        public services that are easy to find and simple to use</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <p><a href="/index.html" id="logo-ssg1"><image src="{{ asset_path }}images/ssg2.png" alt="ssg2 logo" width="200" height="80"></image></a></p>
+    </div>
+  </div>
+
+</div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

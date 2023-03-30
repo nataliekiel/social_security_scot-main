@@ -1,0 +1,79 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+          <div class="govuk-grid-column-full">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Statement in support of application</h1>
+    
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                      {{ govukTextarea({
+                        name: "statement",
+                        id: "statement",
+                        rows: "15",
+                        label: {
+                          text: "Please tell us your personal qualities, skills and attributes, experience and any major achievements and show how they match those needed for this job.",
+                          classes: "govuk-label--m",
+                          value: data ['statement']
+                        }
+                      }) }}
+
+
+                      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+                  
+
+                      {% set newsHtml %}
+                      {{ govukInput({
+                        id: "ad-news",
+                        name: "ad-news",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Which one"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      {% set journalHtml %}
+                      {{ govukInput({
+                        id: "ad-journal",
+                        name: "ad-journal",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Which one"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      {% set otherwayHtml %}
+                      {{ govukInput({
+                        id: "ad-otherway",
+                        name: "ad-otherway",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Please specificy"
+                        }
+                      }) }}
+                      {% endset -%}
+
+
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

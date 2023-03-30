@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/BG-warm-home/bg.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/BG-warm-home/bg-logo.png" alt="go back to homepage" width="250" height="97"></image></a>
+      </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="warm-home-tagline">
+        This is a training website
+      </span>
+    </a>  
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+British Gas - Warm Home Discount
+{% endblock %}
+
+
+{% block content %}
+
+<div class="warm-home">
+    <div class="govuk-grid-row  warm-home-white-block">
+      <h1>Warm Home Discount</h1>
+      <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
+    </div>
+    <div class="govuk-grid-row warm-home-black-block">
+      {% if data['eligible-for-warm-home-discount'] %}
+      <h2>Submitted</h2>
+      <h2 style="font-weight: 600;">Warm Home Discount</h2>
+      <h2 style="font-size: 2.5em">Success! You'll get it.</h2>
+      <p style="font-size:1.2em; font-weight:600">When will I get it?</p>
+      <p>We’re working hard to credit all Warm Home Discounts between January and March 2021 If you’ve got a prepay meter, we’ll send you a voucher to take to the Post Office. And for everyone else, you’ll see a Warm Home Discount credit on your bill or statement.</p>
+      <p style="font-size:1.2em ; font-weight:600">Do I need to send any documents?</p>
+      <p>For security, our system randomly picks some customers to provide evidence of their benefits and income. Don’t worry if that includes you.</p>
+      <p>You’ll get an email or letter with full details of what we need and how to provide it. Just be sure to keep an eye on your inbox and spam folder if you’ve given us an email address.</p>
+      <p style="font-size:1.2em; font-weight:600">Can I change which fuel gets the discount?</p>
+      <p>Yes. But please wait until after you’ve received the credit, then let us know if you want to transfer it to your other fuel. You can do that by starting a <a href="#">Live Chat from our website.</a></p>
+      <p style="font-size:1.2em; font-weight:600">What if I change supplier?</p>
+      <p>The Warm Home Discount Scheme is run by your electricity supplier (even if you ask for the credit on your gas account). So if you change electricity supplier before you get the credit from us, you'll need to reapply to your new provider.</p>
+      <p style="font-size:1.2em; font-weight:600">PLEASE SAVE THIS PAGE FOR YOUR RECORDS Your reference number is {% if data['elect-account']%} {{data['elect-account']}} {% else %} 90786443 {% endif %}</p>
+
+      {% else %}
+
+      <h2>Submitted</h2>
+      <h2 style="font-weight: 600;">Warm Home Discount</h2>
+      <h2 style="font-size: 2.5em">Sorry, you don’t qualify right now</h2>
+      <p>Unfortunately there’s nothing we can do to alter the decision because we have to apply the <a href="https://www.gov.uk/the-warm-home-discount-scheme" target="_blank" rel="noopener">strict rules set by the Government</a>. So although our agents are happy to help you with anything else, please don’t contact them about this – there’s nothing they can do.</p>
+      <p style="font-size:1.2em">What if my income or benefits change?</p>
+      <p>You can always reapply at <a href="bg-name.html">britishgaswarmhomediscount.com</a> to see if you qualify based on your new circumstances.</p>
+      <p style="font-size:1.2em">If you’re struggling, we’re here for you</p>
+      <p>Remember, there are lots of <a href="https://www.britishgas.co.uk/energy/help-if-youre-struggling-to-pay.html" target="_blank" rel="noopener">ways we can help you with your fuel bills.</a></p>
+      {% endif %}
+    </div>
+</div>
+<br>
+<br>
+{{ govukButton({
+  text: "Finish",
+  classes: "warm-home-bg-button",
+  href: "/forms/end-feedback.html"
+}) }}
+
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer warm-home-footer" role="contentinfo" style="padding-top: 0; border-top: solid 10px #005eb8;">
+  <div class="govuk-width-container">
+  
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/index.html">Home</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/about.html">About</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+            </li>
+            <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+            </li>
+          </ul>
+          <span class="govuk-header__logotype">
+            <image src="{{ asset_path }}/images/BG-warm-home/bg-white-blue.png" alt="British Gas logo" width="144" height="59">
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

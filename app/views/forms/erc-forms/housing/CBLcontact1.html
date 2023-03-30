@@ -1,0 +1,156 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class=" button-secondary govuk-button" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+            
+        {% set attorneyHtml %}
+        {{ govukTextarea({
+          id: "contact-att",
+          name: "contact-att",
+          value: data['contact-att'],
+          label: {
+            text: "Enter the contact details of your advocate or power of attorney, including name, phone and address"
+          }
+        }) }}
+        {% endset -%}
+        
+        {% set otheraddHtml %}
+        {{ govukTextarea({
+          id: "other-add",
+          name: "other-add",
+          value: data['other-add'],
+          label: {
+            text: "Enter other address. Include postcode if you know it."
+          }
+        }) }}
+        {% endset -%}
+
+        {% if data['email'] %}
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "How would you prefer us to contact you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "We may still contact you in another way if we can't reach you."
+          },
+          items: [
+            {
+              value: "Email",
+              text: "Email",
+              checked: checked ("how-contacted", "Email")
+            },
+            {
+              value: "Phone",
+              text: "Phone",
+              checked: checked ("how-contacted", "Phone")
+            },
+            {
+              value: "Phone but only by text",
+              text: "Phone but only by text",
+              checked: checked ("how-contacted", "Phone but only by text")
+            },
+            {
+              value: "Post at my current address",
+              text: "Post at my current address",
+              checked: checked ("how-contacted", "Post current")
+            },
+            {
+              value: "Post at a different address",
+              text: "Post at a different address",
+              checked: checked ("how-contacted", "Post else"),
+              conditional: {
+                html: otheraddHtml
+              }
+            },
+            {
+              value: "I have an advocate or power of attorney",
+              text: "I have an advocate or power of attorney",
+              checked: checked ("how-contacted", "I have an advocate or power of attorney"),
+              conditional: {
+                html: attorneyHtml
+              }
+            }
+          ]
+        }) }}
+        {% else %}
+
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "How would you prefer us to contact you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "We may still contact you in another way if we can't reach you."
+          },
+          items: [
+            {
+              value: "Phone",
+              text: "Phone",
+              checked: checked ("how-contacted", "Phone")
+            },
+            {
+              value: "Phone but only by text",
+              text: "Phone but only by text",
+              checked: checked ("how-contacted", "Phone but only by text")
+            },
+            {
+              value: "Post at my current address",
+              text: "Post at my current address",
+              checked: checked ("how-contacted", "Post current")
+            },
+            {
+              value: "Post at a different address",
+              text: "Post at a different address",
+              checked: checked ("how-contacted", "Post else"),
+              conditional: {
+                html: otheraddHtml
+              }
+            },
+            {
+              value: "I have an advocate or power of attorney",
+              text: "I have an advocate or power of attorney",
+              checked: checked ("how-contacted", "I have an advocate or power of attorney"),
+              conditional: {
+                html: attorneyHtml
+              }
+            }
+          ]
+        }) }}
+
+        {% endif %}
+    
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+          </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,695 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+
+$erc-text : #1a1a1a;
+$erc-alt-text-blue : #225369;
+$erc-logo-blue: #0071BA;
+$erc-green-border: #008000;
+$erc-green: #008062;
+$erc-grey-bg: #e5e5e5;
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+
+.govuk-header__container {
+    border-bottom: 0px;
+    background-color: $erc-green;
+    border-top: 20px solid $erc-text
+}
+
+.erc-tagline {
+    font-size: 1.5em;
+    color: white;
+    background-color: $erc-text;
+    padding: 4px 10px;
+    margin: 4px 10px;
+    font-weight: 500;
+    font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 395px) {
+        font-size:1.2em;
+    }
+}
+
+
+.govuk-header__container.erc-old {
+    background-color: #ffffff;
+    border-top: 20px solid #ffffff;
+    .govuk-header__content {
+        @media only screen and (min-width: 169px) {
+        border: 10px solid #ffffff;
+        }
+    }
+}
+.erc-tagline-old {
+    font-size: 1.5em;
+    color: white;
+    background-color: $erc-logo-blue;
+    padding: 4px 10px;
+    margin: 4px 10px;
+    font-weight: 500;
+    font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 395px) {
+        font-size:1.2em;
+    }
+}
+
+
+
+.govuk-header__content {
+    @media only screen and (min-width: 169px) {
+    border: 10px solid $erc-green;
+    }
+    a {
+        text-decoration: none;
+    }
+    @media only screen and (min-width: 770px) {
+        margin-top: 25px;
+    }
+}
+
+.govuk-header__logotype {
+    padding: 0 20px;
+}
+
+
+
+//---------------------------------------- FOOTER ------------------------------------------------//
+.govuk-footer {
+    font-size: 1em;
+    background-color: #f5f5f5;
+    p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
+        color:  $erc-text;
+    }
+}
+
+
+.govuk-footer__link{
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+}
+.govuk-footer__link:hover {
+    text-decoration: underline;
+
+}
+.govuk-footer__inline-list-item{
+    padding: 1em;
+}
+.govuk-footer__meta-item {
+    margin-bottom: 0;
+}
+.govuk-footer__link:focus{
+    background-color: #f5f5f5;
+    outline: 3px solid #fd0;
+}
+
+.footer-credit {
+    background-color: $erc-green;
+    padding: 20px 10px;
+    p, a, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
+        font-size: 0.9em;
+        color: #ffffff;
+    }
+    .govuk-footer__link:focus {
+        background-color: $erc-green;
+    }
+}
+//---------------------------------------- BODY------------------------------------------------//
+
+body p, ul, li , a, span, .govuk-link, .govuk-hint,
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    color: $erc-text;
+    font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+body p, ul, li , a, span, .govuk-link, .govuk-list,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    font-size: 1em; //16px;
+}
+
+.do-it-online {
+    color: $erc-alt-text-blue !important;
+    text-align: right;
+}
+
+.govuk-heading-l {
+   margin-top: 50px;
+}
+
+.govuk-heading-m {
+    margin-top: 30px;
+ }
+
+.govuk-accordion__section-header {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.govuk-accordion__section-button, .govuk-accordion__section-heading,
+.js-enabled .govuk-accordion__section-button:focus, .js-enabled .govuk-accordion__section-button {
+color: white;
+font-size: 1.2em;
+font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+background-color:$erc-green;
+padding: 5px;
+box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
+}
+
+.govuk-accordion__section-heading {
+    margin-right: 10px;
+}
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+    background-color: $erc-green;
+}
+
+.heading-title {
+    background-color: $erc-grey-bg;
+    font-size: 3em;
+    font-weight: 800;
+    padding: 60px 20px 30px 20px;
+    @media only screen and (max-width: 395px) {
+        font-size:2em;
+    }
+}
+
+.heading-intro {
+    font-size: 1.8em;
+    font-weight: 700;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: solid 3px $erc-green;
+}
+.govuk-main-wrapper--auto-spacing:first-child {
+    padding-top: 0;
+}
+
+.govuk-fieldset__legend--m {
+    font-size: 1.5em;
+}
+
+// ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
+
+// back button/link
+.govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
+    color: $erc-text;
+    margin-bottom: 2em;
+}
+
+.govuk-textarea, .govuk-input{
+    border: 1px solid #999999;
+}
+
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue , table{
+    color: $erc-text;
+}
+
+.govuk-link, a, .govuk-link:link, a:link,
+.govuk-link:visited, a:visited, .govuk-link:active, a:active{
+    color: #005EA5
+}
+
+.govuk-link:focus, a:focus{
+    outline: 2px solid #0064FF;
+}
+
+.govuk-link:hover, a:hover{
+    color: #2B8CC4;
+}
+
+
+#logo-erc:focus{
+    background-color: 	#0000; // was putting a thick yellow layer at the bottom of the ERC logo
+}
+
+
+.govuk-error-message, .govuk-error-summary, .govuk-input--error {
+    color: #B30000
+}
+.govuk-form-group--error {
+    border-left: 5px solid #B30000;
+}
+
+// -------------------------------------------- Helpers ------------------------------------------------- //
+
+
+.validated {
+    border: 2px solid #008000;
+}
+
+.input-read-only {
+    background: #ececec;
+}
+
+  .centred-input-fields {
+    .govuk-summary-list__row, dt.govuk-summary-list__key, dd.govuk-summary-list__value,  dd.govuk-summary-list__actions, label {
+        border-bottom: 0px;
+        font-size: 14px;
+    }
+    label, dt.govuk-summary-list__key  {
+        font-weight: 400;
+    }
+    dt.govuk-summary-list__key {
+        @media (min-width: 40.0625em) {
+            width: 30%;
+            }
+    }
+    dd.govuk-summary-list__value {
+        textarea.govuk-textarea, input.govuk-input, select.govuk-select{
+            border: 1px solid #A6B3BB;
+            font-size: 14px;
+        }
+        @media (min-width: 40.0625em) {
+        width: 40%;
+        }
+    }
+    dd.govuk-summary-list__actions {
+        text-align: left;
+        @media (min-width: 40.0625em) {
+        width: 30%;
+        }
+        .error {
+            color: red;
+            border: 1px solid red;
+            padding: 5px;
+        }
+    }
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #666;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    width: 200px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 5px; 
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+
+
+//-------------------------------------------- Buttons --------------------------------------------------- //
+
+.button-primary, .govuk-button {
+    background-color : $erc-green;
+    box-shadow: 0 2px 0 #0000;
+    font-weight:bold;
+    font-size: 16px;
+  }
+
+  .govuk-button:hover.button-primary, .govuk-button:focus.button-primary  {
+    box-shadow: inset 0 0 20em rgba(0,0,0,0.2);
+  }
+
+  .button-secondary , .govuk-button:active.button-secondary, .govuk-button:link.button-secondary, .govuk-button:visited.button-secondary {
+    background-color :  #cecece ;
+    color: black;
+    box-shadow: 0 2px 0 #0000;
+  }
+
+  .govuk-button:hover.button-secondary, .govuk-button:focus.button-secondary  {
+    background-color : #dddddd;
+    color: black;
+    box-shadow: inset 0 0 20em rgba(0,0,0,0.2);
+  }
+
+  .button-warning {
+    background-color : #b10e1e  ;
+    box-shadow: 0 2px 0 #0000;
+  }
+
+  .govuk-button:hover.button-warning, .govuk-button:focus.button-warning  {
+    background-color : #df3034  ;
+    box-shadow: inset 0 0 20em rgba(0,0,0,0.2);
+  }
+
+  .govuk-button.erc-long-button{
+    color: #005ea5;
+    font-weight: bold;
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 0;
+    width: 400px;
+    @media only screen and (max-width: 400px) {
+        width: 300px;
+    }
+    span {
+        text-align: left;
+        width: 370px;
+        color: #005ea5;
+        @media only screen and (max-width: 400px) {
+            width: 270px;
+        }
+    }
+  }
+
+  .govuk-button.erc-long-button:focus:not(:active):not(:hover){
+    color: $erc-text;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #cccccc;
+    box-shadow: 0 2px 0 #0064FF;
+    border-color: #0064FF;
+  }
+
+  //--------------------------------------- message boxes and panels-----------------------------------------------//
+
+.panel-warning {
+    background-color: #c67f0f;
+}
+
+.panel-information {
+  background-color: #005ea5;
+  }
+
+  .panel-error {
+      background-color: #B30000;
+  }
+
+  .panel-warning {
+      background-color: #c67f0f;
+  }
+
+  .panel-info {
+      background-color: #005ea5;
+  }
+
+.ercError,
+.ercInformation,
+.ercSuccess,
+.ercWarning {
+  display: block;
+  margin: 15px !important;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+.ercInformation {
+  color: #004269;
+  background: url(../images/ERC/erc_information.gif) 10px center no-repeat #bde5f8;
+  border: 1px solid #004269;
+}
+.ercSuccess {
+  color: #2d4f2a;
+  background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff2bf;
+  border: 1px solid #2d4f2a;
+}
+.ercWarning {
+  color: #782a06;
+  background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #feefb3;
+  border: 1px solid #782a06;
+}
+.ercError {
+  color: #D8000C;
+  background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
+  border: 1px solid #d8000c;
+}
+
+// -------------------------------------------- alternative headings and buttons ------------------------------------------------- //
+
+.erc-alt-double-lines {
+    color: $erc-alt-text-blue;
+    font-size: 24px;
+    border-top: 1px solid $erc-alt-text-blue;
+    border-bottom: 1px solid $erc-alt-text-blue;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+}
+
+.erc-alt-dark-blue-bg {
+    background-color: $erc-alt-text-blue;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+    color: #fff;
+    border: 1px #25404d solid;
+    border-radius: 5px;
+    text-shadow: #444 0 1px 1px;
+    box-shadow: inset 0 0 10px #2a4551;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.erc-alt-dark-grey-round {
+    background: #ccc;
+    color: #000;
+    font-weight: bold;
+    border: 1px #7e7e7e solid;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px #888888;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+}
+
+.erc-alt-dark-grey {
+    margin: 0 0 7px;
+    padding: 7px;
+    background: #e0e0e0;
+    color: #444;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.erc-alt-light-grey {
+    background-color: #f3f6fb;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #444;
+    padding: 5px 10px;
+    margin: 4px 0 8px;
+    box-shadow: inset 0 0 10px #d5d9dc;
+    line-height: 22px;
+    border: 1px solid #a6b3bb;
+    border-radius: 5px;
+}
+
+.erc-payment-blue-bg {
+    background-color: #0051B8;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.payment {
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    p, label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    p.selected {
+        background-color: #D1CEE1;
+        a {
+            text-decoration: underline;
+        }
+    }
+    .govuk-table__header {
+        background-color: #0051B8;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #808080;
+        padding-left: 5px;
+    }
+    .govuk-table__cell {
+        border-bottom: 0;
+        font-size: 14px;
+    }
+    .govuk-form-group {
+        margin-bottom: 5px;
+    }
+    .govuk-input {
+        height: 1.5rem;
+        border: 1px solid #1a1a1a;
+        font-size: 14px;
+    }
+}
+
+.ct-account {
+    .govuk-table__header {
+        background-color: #558AA6;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #ffffff;
+        padding-left: 5px;
+    }
+    .govuk-table__cell {
+        Background-color: #E8ECEE;
+        border-bottom: 0;
+        font-size: 14px;
+        border: 1px solid #ffffff;
+        padding: 20px 5px !important;
+    }
+}
+
+.school-meals {
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    thead {
+        background-color:#ddd;
+    }
+    th {
+        padding: 5px 5px 20px 5px;
+    }
+    td {
+        padding: 5px;
+    }
+}
+
+
+div.payment-error{
+    li {
+        font-size: 14px;
+        color: red;
+    }
+}
+
+button.erc-payment, a.erc-payment{
+    background-color: #0051B8;
+    border: 1px solid #0051B8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 ;
+    font-size: 14px;
+    padding: 3px 6px;
+}
+
+button.erc-payment:hover, a.erc-payment:hover{
+    background-color: #ffffff !important;
+    border: 1px solid #0051B8;
+    color: #0051B8;
+}
+
+button.erc-alt, a.erc-alt{
+    background-color: $erc-alt-text-blue;
+    border: 1px solid #23408E;
+    color: #fff;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 8px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+}
+button.button-primary.erc-alt:hover, a.button-primary.erc-alt:hover {
+    text-decoration: underline;
+    background-color: #424242 ;
+}
+
+button.button-primary.erc-alt:active, a.button-primary.erc-alt:active {
+    text-decoration: underline;
+    background-color: #568BA3;
+    border-color: #888;
+}
+
+a.button-primary.erc-alt-disco, button.button-primary.erc-alt-disco {
+    background-color: #444;
+    border: 1px solid #444;
+    color:  #2cf3f3;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 130%;
+    font-weight: 700;
+    border-radius: 5px 5px 5px 5px;
+    text-shadow: 0 1px 0 #000;
+}
+
+
+button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus,
+a.button-primary.erc-alt-submission, a.button-primary.erc-alt-submission:focus   {
+    background-color: #43A047;
+    border: 1px solid #43A047;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 8px;
+    text-shadow: 0 1px 0 #000;
+}
+
+button.button-primary.erc-alt-submission:after, a.button-primary.erc-alt-submission:after{
+    content: "\2713";
+    color: #fff;
+    font-size: 12pt;
+    font-weight: bold;
+    width: 1em;
+}
+
+button.button-primary.erc-alt-submission:hover , a.button-primary.erc-alt-submission:hover {
+    text-decoration: underline;
+}
+
+button.button-primary.erc-alt-submission:active, button.button-primary.erc-alt-submission:focus,
+a.button-primary.erc-alt-submission:active, a.button-primary.erc-alt-submission:focus {
+    background-color: #424242;
+    color: #fff;
+
+}
+
+
+// -------------------------------------------- CBL------------------------------------------------- //
+
+hr.erc {
+    border-top: 2px solid $erc-text;
+}
+
+//tables for person data
+.no-border {
+    border: 0px;
+}
+
+
+.half-width {
+    max-width: 100%;
+    @media only screen and (min-width: 750px) {
+        width : 50%;
+    }
+}
+
+.govuk-table__cell, .govuk-table__header{
+    padding: 4px 20px 4px 0;
+}
+th {
+    white-space: nowrap;
+}

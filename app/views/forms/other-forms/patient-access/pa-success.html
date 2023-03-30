@@ -1,0 +1,31 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+  <div class="govuk-grid-row pa-block pa-grey-container" style="text-align: center;">
+    <div class="govuk-grid-column-full">
+    <p>&nbsp;<image  src="{{ asset_path }}images/PA/greentick.png" alt="success" width="40" height="40"></image></p>
+    <h1>Your account has been successfully created</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <h2>Check your email inbox now</h2>
+            <p>We’ve sent you a verification link to your email address <strong>{{data['pa-email']}}</strong>. Please check your email inbox and verify your email address.</p>
+            <a href="./pa-post-signin">Skip verification for now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You would receive an email at the point and in the email there would be a link to follow.</p>
+    <p>Following this link would signed you in.</p>
+    <p>The email will look like this picture below:</p>
+    <p><image src="{{ asset_path }}images/PA/verification-email-pa.png" alt="screenshot of the email to verify your account" style="width:90% ; border: 20px solid #D3368A;"></image></p>
+  </div>
+</main>
+</div>
+
+  {% include "../../../includes/pa-footer.html"  %}

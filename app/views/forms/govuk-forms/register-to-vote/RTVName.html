@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Name
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+      {% call govukFieldset({
+          legend: {
+          text: "What is your full name?",
+          subtext:"Enter your name in full, as it appears on official documents",
+          classes: "govuk-fieldset__legend--xl",
+          isPageHeading: true
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            text: "First (given) name" 
+          },
+          classes: "govuk-!-width-one-half",
+          id: "first-name",
+          name: "first-name",
+          value: data['first-name']
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Middle name (optional)"
+          },
+          classes: "govuk-!-width-one-half",
+          id: "middle-name",
+          name: "middle-name",
+          value: data['middle-name']
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Last name (optional)"
+          },
+          classes: "govuk-!-width-one-half",
+          id: "last-name",
+          name: "last-name",
+          value: data['last-name']
+        }) }}
+
+      {% endcall %}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set namechangeHtml %}
+      <p><strong>What was your previous name</strong></p>
+      <p>You don’t have to tell us your previous name but it will help us identify you, and you might need to send us copies of identity documents if you don’t.</p>
+      <p>If you changed your name more than once, enter your most recent previous name.</p>
+      {{ govukInput({
+        id: "previous-first-name",
+        name: "previous-first-name",
+        classes: "govuk-!-width-one-half",
+        value: data['previous-first-name'],
+        label: {
+          text: "Previous first (given) name (optional)"
+        }
+      }) }}
+
+      {{ govukInput({
+          id: "previous-middle-name",
+          name: "previous-middle-name",
+          classes: "govuk-!-width-one-half",
+          value: data['previous-middle-name'],
+          label: {
+            text: "Previous middle names(optional)"
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "previous-last-name",
+          name: "previous-last-name",        
+          value: data['previous-last-name'],
+          classes: "govuk-!-width-one-half",
+          label: {
+            text: "Previous last name(optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "previous-name-conditional",
+        name: "previous-name",
+        fieldset: {
+          legend: {
+            text: "Have you changed your name?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example:marriage, deed poll"
+        },
+        items: [
+          {
+            value: "No, I haven't changed my name",
+            text: "No, I haven't changed my name",
+            checked: checked ("previous-name", "No, I haven't changed my name")
+          },
+          {
+            value: "Yes, I changed my name",
+            text: "Yes, I changed my name",
+            checked: checked ("previous-name", "Yes, I changed my name"),
+            conditional: {
+              html: namechangeHtml
+            }
+          },
+          {
+            value: "Prefer not to say",
+            text: "Prefer not to say",
+            checked: checked ("previous-name", "Prefer not to say")
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

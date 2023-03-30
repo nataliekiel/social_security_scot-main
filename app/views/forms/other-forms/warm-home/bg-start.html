@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/BG-warm-home/bg.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/BG-warm-home/bg-logo.png" alt="go back to homepage" width="250" height="97"></image></a>
+      </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="warm-home-tagline">
+        This is a training website
+      </span>
+    </a>  
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+British Gas - Warm Home Discount
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row bg-start-page">
+    <div style="border-radius: 2em; background-color: #fff; padding: 2em;">
+      <h1 class="govuk-heading-s">Warm Home Discount.</h1>
+      <h2 class="govuk-heading-xl">What you need to know</h2>
+      <p style="font-size: 1.4em; font-weight: 200">You'll need to apply for the scheme each year in order to be considered for payment and we reserve the right to close the scheme to applicants at any point. In order to complete a registration we'll need details of all the benefits you receive and amounts, as well as any other household income. Please also keep any correspondence you may have confirming household income or benefits gained, as you may be asked to provide documentary evidence to support your claim, as required by Scheme Guidelines.</p>
+      {{ govukButton({
+        text: "Apply here",
+        classes: "warm-home-bg-button",
+        href: "bg-name.html"
+      }) }}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer warm-home-footer" role="contentinfo" style="padding-top: 0; border-top: solid 10px #005eb8;">
+  <div class="govuk-width-container">
+  
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/index.html">Home</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/about.html">About</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+            </li>
+            <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+            </li>
+          </ul>
+          <span class="govuk-header__logotype">
+            <image src="{{ asset_path }}/images/BG-warm-home/bg-white-blue.png" alt="British Gas logo" width="144" height="59">
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

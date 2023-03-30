@@ -1,0 +1,54 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Other children
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class=" button-secondary govuk-button" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "other-children",
+        name: "other-children",
+        fieldset: {
+          legend: {
+            text: "Do you have a child who sometimes lives with you overnight?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, a child who lives the rest of the time with another parent or carer. "
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked ("other-children", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked ("other-children", "no")
+          }
+        ]
+      }) }}
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "button-primary"
+            }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layout_la2.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+{% block head %}
+<!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+  <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="/public/stylesheets/css.css">
+<title>Dashboard</title>
+{% endblock %}
+
+
+{% block content %} 
+<header class="ds_page-header">
+  <h1 class="ds_page-header__title">Child Disability Payment</h1>
+</header>
+<br>
+  <p>If you are eligible, you can apply for Child Disability Payment with Special Rules for Terminal Illness.</p>
+
+<div class="ds_warning-text">
+  <strong class="ds_warning-text__icon" aria-hidden="true"></strong>
+  <strong class="visually-hidden">Warning</strong>
+  <div class="ds_warning-text__text"><strong>Special Rules for Terminal Illness:</strong> A person is considered to be terminally ill if they have a progressive disease from which death may reasonably be expected. The individual’s registered medical practitioner or registered nurse must make the clinical diagnosis. You can find more information on <a href="https://www.gov.scot/policies/social-security/terminal-illness/">Terminal illness (opens in a new tab) online.</a></div>
+</div>
+ <p>If this does not apply, you can continue to apply through the standard Child Disability Payment application.</p>
+ <br>
+ <br>
+
+    <fieldset>
+        <legend>Are you eligible for Child Disability Payment under Special Rules with Terminal Illness?</legend>
+
+        <div class="ds_field-group">
+            <div class="ds_radio">
+                <input class="ds_radio__input" id="payment-advance" name="payment-type" type="radio" value="advance" />
+                <label class="ds_radio__label" for="payment-advance">Yes</label>
+                <p class="ds_hint-text">Apply for Child Disability Payment under Special Rules for Terminal Illness</p>
+            </div>
+
+            <div class="ds_radio">
+                <input class="ds_radio__input" id="payment-arrears" name="payment-type" type="radio" value="arrears" />
+                <label class="ds_radio__label" for="payment-arrears">No</label>
+                <p class="ds_hint-text">Continue with standard Child Disability Payment application</p>
+            </div>
+        </div>
+    </fieldset>
+    <br>
+  <div class="button-group">
+    <a href="../dashboard-two-images/home" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
+        <svg class="ds_icon" aria-hidden="true" role="img"><use href="/assets/images/SG/icons8-less-than-30.png"></use></svg>
+        Back
+    </a>
+
+    <a href="#" class="ds_button  ds_button--has-icon">
+        Next
+        <svg class="ds_icon" aria-hidden="true" role="img"><use href="/assets/images/SG/icons8-more-than-30.png"></use></svg>
+    </a>
+</div>
+      </form>
+
+
+    {% endblock %}
