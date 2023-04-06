@@ -35,90 +35,91 @@ Best Start Grant
     </thead>
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Mal Reynolds</td>
+        <td class="govuk-table__cell" id="Mal-Reynolds">Mal Reynolds</td>
         <td class="govuk-table__cell">Adult Disability Payment</td>
         <td class="govuk-table__cell">22 February 2023 at 10:05 AM</td>
-        <td class="govuk-table__cell"><button class="ds_button govuk-!-margin-0">Resume</button></td>
+        <td class="govuk-table__cell"><button class="ds_button govuk-!-margin-0" aria-describedby="Mal-Reynolds">Resume</button></td>
+        <!--add describe by ARIA on button to relate to client name -->
       </tr>
     </tbody>
   </table>
 <br>
-<h2>Start a new form</h2>
+<h2>Start a new form</h2><!-- remove list items, and have in headings-->
 <nav aria-label="Category navigation">
-  <ul class="ds_category-list  ds_category-list--grid  ds_category-list--narrow">
-      <li class="ds_card  ds_card--has-hover">
+  <div class="ds_category-list  ds_category-list--grid  ds_category-list--narrow">
+      <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">
-              <h2 class="ds_category-item__title"> <image src="{{ asset_path }}/images/SG/adp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information" height="50"
-              ></image>
+              <h3 class="ds_category-item__title"> <image src="{{ asset_path }}/images/SG/adp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null" height="50"
+              ></image> <!-- add alt:null -->
                   <a href="#" class="ds_category-item__link">
                       Apply for Adult Disability Payment
                   </a>
-              </h2>
+              </h3>
 
               <p class="ds_category-item__summary">
                   More information here
               </p>
           </article>
-      </li>
-      <li class="ds_card  ds_card--has-hover">
+        </div>
+      <div class="ds_card  ds_card--has-hover">
         <article class="ds_category-item  ds_category-item--card">
-            <h2 class="ds_category-item__title"> <image src="{{ asset_path }}/images/SG/cdp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information" height="50"></image>
+            <h3 class="ds_category-item__title"> <image src="{{ asset_path }}/images/SG/cdp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null" height="50"></image>
                 <a href="#" class="ds_category-item__link">
                     Apply for Child Disability Payment
                 </a>
-            </h2>
+            </h3>
 
             <p class="ds_category-item__summary">
                 More information here
             </p>
         </article>
-    </li>
-      <li class="ds_card  ds_card--has-hover">
+      </div>
+      <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">
-              <h2 class="ds_category-item__title"><image src="{{ asset_path }}/images/SG/adp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information"
+              <h3 class="ds_category-item__title"><image src="{{ asset_path }}/images/SG/adp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null"
                 height="50"></image>
                   <a href="#" class="ds_category-item__link">Apply for Adult Disability Payment under Special Rules for Terminal Illness</a>
-              </h2> 
+              </h3> 
 
               <p class="ds_category-item__summary">
                   Apply under Special Rules for Terminal Illness
               </p>
-              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information"></image>
+              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null" aria-describedby="srti-text"></image>
           </article>
-      </li>
+        </div>
 
-      <li class="ds_card  ds_card--has-hover">
+      <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">
-              <h2 class="ds_category-item__title"><image src="{{ asset_path }}/images/SG/cdp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information" height="50"></image>
+              <h3 class="ds_category-item__title"><image src="{{ asset_path }}/images/SG/cdp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null" height="50"></image>
                   <a href="#" class="ds_category-item__link">Apply for Child Disability Payment under Special Rules for Terminal Illness</a>
-              </h2>
+              </h3>
 
               <p class="ds_category-item__summary">
                 Apply under Special Rules for Terminal Illness
               </p>
-              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information"></image>
+              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null" aria-describedby="srti-text"></image> <!--tooltip for info icon?-->
           </article>
-      </li>
+        </div>
 
-      <li class="ds_card  ds_card--has-hover">
+      <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">   
     
-              <h2 class="ds_category-item__title"> <image src="{{ asset_path }}/images/SG/carer-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="information" height="50"
+              <h3 class="ds_category-item__title"> <image src="{{ asset_path }}/images/SG/carer-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="null" height="50"
               ></image> 
                   <a href="#" class="ds_category-item__link">Apply for Carer's Support Payment</a>
-              </h2>
+              </h3>
         
 
               <p class="ds_category-item__summary">
                   More information on Carer's Support Payment
               </p>
           </article>
-      </li>
+        </div>
 
-  </ul>
+    </div>
 </nav>
 <br>
-<div class="ds_warning-text">
+<div class="ds_warning-text" id="srti-text">
     <strong class="ds_warning-text__icon" aria-hidden="true"></strong>
     <strong class="visually-hidden">Warning</strong>
     <div class="ds_warning-text__text"><strong>Special Rules for Terminal Illness:</strong> A person is considered to be terminally ill if they have a progressive disease from which death may reasonably be expected. The individual’s registered medical practitioner or registered nurse must make the clinical diagnosis. You can find more information on <a href="https://www.gov.scot/policies/social-security/terminal-illness/">Terminal illness (opens in a new tab) online.</a></div>
@@ -126,32 +127,32 @@ Best Start Grant
  <br>
 <h2>Other options</h2>
 <nav aria-label="Category navigation">
-  <ul class="ds_category-list  ds_category-list--grid  ds_category-list--narrow">
-      <li class="ds_card  ds_card--has-hover">
+  <div class="ds_category-list  ds_category-list--grid  ds_category-list--narrow">
+      <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">
-              <h2 class="ds_category-item__title">
+              <h3 class="ds_category-item__title">
                   <a href="#" class="ds_category-item__link">
                       Request for a re-determination or appeal
                   </a>
-              </h2>
+              </h3>
 
               <p class="ds_category-item__summary">
                   More information here
               </p>
           </article>
-      </li>
+        </div>
 
-      <li class="ds_card  ds_card--has-hover">
+      <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">
-              <h2 class="ds_category-item__title">
+              <h3 class="ds_category-item__title">
                   <a href="#" class="ds_category-item__link">Send additional supporting information</a>
-              </h2> 
+              </h3> 
 
               <p class="ds_category-item__summary">
                   More information here
               </p>
           </article>
-      </li>
+        </div>
 
 </div>
 

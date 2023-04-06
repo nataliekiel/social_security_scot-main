@@ -1,0 +1,105 @@
+{% extends "layout_la2.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+{% block head %}
+<!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+  <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="/public/stylesheets/css.css">
+<title>Dashboard</title>
+{% endblock %}
+
+
+{% block content %} 
+<header class="ds_page-header">
+  <h1 class="ds_page-header__title">Apply for Adult Disability Payment</h1>
+</header>
+<br>
+  <p>You need to complete and review each section below before submitting your appliation</p>
+
+ <h2>Part 1</h2>
+ <br>
+ <p>You need to complete and review each section below before submitting your appliation</p>
+ <br>
+ <h2 id="task-list-status" class="ds_task-list-status-heading">Application incomplete</h2>
+ <nav aria-labelledby="task-list-status" class="ds_task-list-status">
+     <p>You have completed 1 of 4 sections.</p>
+     <p><a href="#task2">Skip to first incomplete section</a></p>
+ </nav>
+ <ul class="ds_task-list">
+     <li class="ds_task-list__task" id="task1">
+         <div class="ds_task-list__task-details">
+             <h3 class="ds_task-list__task-heading">
+                 <a class="ds_task-list__task-link" href="#">Conditions <span class="visually-hidden">(Completed)</span></a>
+             </h3>
+             <p class="ds_hint-text  ds_task-list__task-summary">Tell us about your conditions, symptoms and any sensory issues you have.</p>
+         </div>
+         <div class="ds_task-list__task-status  ds_task-list__task-status--complete" aria-hidden="true">Completed</div>
+     </li>
+     <li class="ds_task-list__task" id="task2">
+         <div class="ds_task-list__task-details">
+             <h3 class="ds_task-list__task-heading">
+                 <a class="ds_task-list__task-link" href="#">Medications <span class="visually-hidden">(In progress)</span></a>
+             </h3>
+             <p class="ds_hint-text  ds_task-list__task-summary">Tell us about any medication you need.</p>
+         </div>
+         <div class="ds_task-list__task-status" aria-hidden="true">In progress</div>
+     </li>
+     <li class="ds_task-list__task" id="task3">
+         <div class="ds_task-list__task-details">
+             <h3 class="ds_task-list__task-heading">
+                 <a class="ds_task-list__task-link" href="#">Treatments and therapies <span class="visually-hidden">(Not started)</span></a>
+             </h3>
+             <p class="ds_hint-text  ds_task-list__task-summary">Tell us about any treatments and therapies you need.</p>
+         </div>
+         <div class="ds_task-list__task-status" aria-hidden="true">Not started</div>
+     </li>
+     <li class="ds_task-list__task" id="task4">
+         <div class="ds_task-list__task-details">
+             <h3 class="ds_task-list__task-heading">Contacts and supporting information <span class="visually-hidden">(Cannot start yet)</span></h3>
+             <p class="ds_hint-text  ds_task-list__task-summary">Share any supporting documents and provide details of people we can talk to about you.</p>
+         </div>
+         <div class="ds_task-list__task-status" aria-hidden="true">Cannot start yet</div>
+     </li>
+ </ul>
+    <fieldset>
+        <legend>Are you eligible for Child Disability Payment under Special Rules with Terminal Illness?</legend>
+
+        <div class="ds_field-group">
+            <div class="ds_radio">
+                <input class="ds_radio__input" id="payment-advance" name="payment-type" type="radio" value="advance" />
+                <label class="ds_radio__label" for="payment-advance">Yes</label>
+                <p class="ds_hint-text">Apply for Child Disability Payment under Special Rules for Terminal Illness</p>
+            </div>
+
+            <div class="ds_radio">
+                <input class="ds_radio__input" id="payment-arrears" name="payment-type" type="radio" value="arrears" />
+                <label class="ds_radio__label" for="payment-arrears">No</label>
+                <p class="ds_hint-text">Continue with standard Child Disability Payment application</p>
+            </div>
+        </div>
+    </fieldset>
+    <br>
+  <div class="button-group">
+    <a href="../dashboard-two-images/home" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">
+        <svg class="ds_icon" aria-hidden="true" role="img"><use href="/assets/images/SG/icons8-less-than-30.png"></use></svg>
+        Back
+    </a>
+
+    <a href="#" class="ds_button  ds_button--has-icon">
+        Next
+        <svg class="ds_icon" aria-hidden="true" role="img"><use href="/assets/images/SG/icons8-more-than-30.png"></use></svg>
+    </a>
+</div>
+      </form>
+
+
+    {% endblock %}
