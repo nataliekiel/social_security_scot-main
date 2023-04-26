@@ -1,7 +1,7 @@
 {% extends "layout_la2.html" %}
 
 {% block pageTitle %}
-Best Start Grant
+Special rules under terminal illness
 {% endblock %}
 {% block head %}
 <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -34,23 +34,24 @@ Best Start Grant
  <br>
  <br>
 
-    <fieldset>
-        <legend>Are you eligible for Child Disability Payment under Special Rules with Terminal Illness?</legend>
+ <fieldset>
+  <legend>Are you eligible for Child Disability Payment under Special Rules with Terminal Illness?</legend>
 
-        <div class="ds_field-group">
-            <div class="ds_radio">
-                <input class="ds_radio__input" id="payment-advance" name="payment-type" type="radio" value="advance" />
-                <label class="ds_radio__label" for="payment-advance">Yes</label>
-                <p class="ds_hint-text">Apply for Child Disability Payment under Special Rules for Terminal Illness</p>
-            </div>
+  <div class="ds_field-group">
+      <div class="ds_radio">
+          <input class="ds_radio__input" id="srti-application" name="application-type" type="radio" value="srti" aria-describedby="application-type-1-hint"/>
+          <label class="ds_radio__label" for="srti-application">Yes</label>
+          <p class="ds_hint-text" id="application-type-1-hint">Apply for Child Disability Payment under Special Rules for Terminal Illness
+      </div>
 
-            <div class="ds_radio">
-                <input class="ds_radio__input" id="payment-arrears" name="payment-type" type="radio" value="arrears" />
-                <label class="ds_radio__label" for="payment-arrears">No</label>
-                <p class="ds_hint-text">Continue with standard Child Disability Payment application</p>
-            </div>
-        </div>
-    </fieldset>
+      <div class="ds_radio">
+          <input class="ds_radio__input" id="standard-application" name="application-type" type="radio" value="standard" aria-describedby="application-type-2-hint" />
+          <label class="ds_radio__label" for="standard-application">No</label>
+          <p class="ds_hint-text" id="application-type-2-hint">Continue with standard Child Disability Payment application</p>
+      </div>
+  </div>
+</fieldset>
+<br>
     <br>
   <div class="button-group">
     <a href="../dashboard-two-images/home" class="ds_button  ds_button--cancel  ds_button--has-icon  ds_button--has-icon--left">

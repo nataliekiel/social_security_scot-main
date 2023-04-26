@@ -1,7 +1,7 @@
 {% extends "layout_la2.html" %}
 
 {% block pageTitle %}
-Best Start Grant
+Special rules under terminal illness
 {% endblock %}
 {% block head %}
 <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -39,15 +39,15 @@ Best Start Grant
 
         <div class="ds_field-group">
             <div class="ds_radio">
-                <input class="ds_radio__input" id="payment-advance" name="payment-type" type="radio" value="advance" />
-                <label class="ds_radio__label" for="payment-advance">Yes</label>
-                <p class="ds_hint-text">Apply for Child Disability Payment under Special Rules for Terminal Illness</p>
+                <input class="ds_radio__input" id="srti-application" name="application-type" type="radio" value="srti" aria-describedby="application-type-1-hint"/>
+                <label class="ds_radio__label" for="srti-application">Yes</label>
+                <p class="ds_hint-text" id="application-type-1-hint">Apply for Child Disability Payment under Special Rules for Terminal Illness
             </div>
 
             <div class="ds_radio">
-                <input class="ds_radio__input" id="payment-arrears" name="payment-type" type="radio" value="arrears" />
-                <label class="ds_radio__label" for="payment-arrears">No</label>
-                <p class="ds_hint-text">Continue with standard Child Disability Payment application</p>
+                <input class="ds_radio__input" id="standard-application" name="application-type" type="radio" value="standard" aria-describedby="application-type-2-hint" />
+                <label class="ds_radio__label" for="standard-application">No</label>
+                <p class="ds_hint-text" id="application-type-2-hint">Continue with standard Child Disability Payment application</p>
             </div>
         </div>
     </fieldset>
@@ -65,5 +65,36 @@ Best Start Grant
 </div>
       </form>
 
-
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How do you want to sign in?
+            </h1>
+          </legend>
+          <div id="sign-in-hint" class="govuk-hint">
+            You’ll need an account to prove your identity and complete your Self Assessment.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in">
+                Sign in with Government Gateway
+              </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before.
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                Sign in with GOV.UK Verify
+              </label>
+              <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
     {% endblock %}
