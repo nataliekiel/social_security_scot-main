@@ -20,10 +20,10 @@ Special rules under terminal illness
 
 {% block content %} 
 <header class="ds_page-header">
-  <h1 class="ds_page-header__title">Is the child terminally ill?</h1>
+  <h1 class="ds_page-header__title">Are you terminally ill?</h1>
 </header>
 <br>
-  <p>Apply for <a href="https://www.mygov.scot/child-disability-payment/how-to-apply">Child Disability Payment under Special Rules for Terminal Illness (opens in a new tab)</a>.</p>
+  <p>Apply for <a href="https://www.mygov.scot/personal-independence-payment-is-moving/if-youre-terminally-ill">Adult Disability Payment under Special Rules for Terminal Illness (opens in a new tab)</a>.</p>
 
 <div class="ds_warning-text">
   <strong class="ds_warning-text__icon" aria-hidden="true"></strong>
@@ -33,20 +33,21 @@ Special rules under terminal illness
  <br>
  <br>
 
- <fieldset>
-  <legend>Does your child have a terminal illness?</legend>
+ <fieldset aria-describedby="question-hint">
+  <legend>Do you have a terminal illness?</legend>
+  <div class="ds_hint-text" id="question-hint">If you're applying for someone else you should answer this question on behalf of the applicant</div>
 
   <div class="ds_field-group">
       <div class="ds_radio">
           <input class="ds_radio__input" id="srti-application" name="application-type" type="radio" value="srti" aria-describedby="application-type-1-hint"/>
           <label class="ds_radio__label" for="srti-application">Yes</label>
-          <p class="ds_hint-text" id="application-type-1-hint">Apply for Child Disability Payment under Special Rules for Terminal Illness
+          <p class="ds_hint-text" id="application-type-1-hint">Apply for Adult Disability Payment under Special Rules for Terminal Illness
       </div>
 
       <div class="ds_radio">
           <input class="ds_radio__input" id="standard-application" name="application-type" type="radio" value="standard" aria-describedby="application-type-2-hint" />
           <label class="ds_radio__label" for="standard-application">No</label>
-          <p class="ds_hint-text" id="application-type-2-hint">Continue to apply for Child Disability Payment</p>
+          <p class="ds_hint-text" id="application-type-2-hint">Continue to apply for Adult Disability Payment</p>
       </div>
   </div>
 </fieldset>
