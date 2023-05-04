@@ -14,7 +14,7 @@ Dashboard
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="/public/stylesheets/css.css">
-<title>Dashboard</title>
+<title>Social Security Scotland Dashboard</title>
 {% endblock %}
 
 
@@ -72,22 +72,22 @@ Dashboard
           <article class="ds_category-item  ds_category-item--card">
               <h3 class="ds_category-item__title"><image src="{{ asset_path }}/images/SG/adp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt=""
                 height="50"></image>
-                  <a href="#" class="ds_category-item__link">Apply for Adult Disability Payment under Special Rules for Terminal Illness</a>
+                  <a href="#" class="ds_category-item__link" aria-describedby="srti-text">Apply for Adult Disability Payment under Special Rules for Terminal Illness</a>
               </h3> 
 
     
-              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt="" aria-describedby="srti-text"></image>
+              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt=""></image>
           </article>
         </div>
 
       <div class="ds_card  ds_card--has-hover">
           <article class="ds_category-item  ds_category-item--card">
               <h3 class="ds_category-item__title"><image src="{{ asset_path }}/images/SG/cdp-icon.png" style="float:right; padding: 3px 3px 0px 0px;" alt="" height="50"></image>
-                  <a href="#" class="ds_category-item__link">Apply for Child Disability Payment under Special Rules for Terminal Illness</a>
+                  <a href="#" class="ds_category-item__link" aria-describedby="srti-text">Apply for Child Disability Payment under Special Rules for Terminal Illness</a>
               </h3>
 
           
-              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt="" aria-describedby="srti-text"></image> <!--tooltip for info icon?-->
+              <image src="{{ asset_path }}/images/SG/note.png" style="float:right; padding: 3px 3px 0px 0px;" alt=""></image> 
           </article>
         </div>
 
@@ -108,8 +108,7 @@ Dashboard
 <div class="ds_warning-text">
     <strong class="ds_warning-text__icon" aria-hidden="true"></strong>
     <strong class="visually-hidden">Warning</strong>
-    <div class="ds_warning-text__text" id="srti-text"><strong>Special Rules for Terminal Illness:</strong> A person is considered to be terminally ill if they have a progressive disease from which death may reasonably be expected. The individual’s registered medical practitioner or registered nurse must make the clinical diagnosis. You can find more information on <a href="https://www.gov.scot/policies/social-security/terminal-illness/">Terminal illness (opens in a new tab) online.</a></div>
-  </div>
+    <div class="ds_warning-text__text" id="srti-text"><strong>Special Rules for Terminal Illness (SRTI):</strong> A person is considered to be terminally ill if they have a progressive disease from which death may reasonably be expected. The individual’s healthcare professional (registered medical practitioner or registered nurse) must make the clinical diagnosis. Find out more on Special Rules for <a href="https://www.gov.scot/policies/social-security/terminal-illness/">Terminal illness (opens in a new tab)</a>.</div>
  <br>
 <h2>Other options</h2>
 <nav aria-label="Category navigation">
